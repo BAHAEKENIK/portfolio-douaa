@@ -132,10 +132,9 @@ export function Skills() {
                     className="skills__footer-item skills__language"
                   >
                     <Flag
-                      className="skills__language-flag"
-                      aria-hidden="true"
-                      focusable="false"
-                    />
+  className="skills__language-flag"
+  aria-hidden="true"
+/>
                     <span className="skills__language-name">{lang.label}</span>
                     <span className="skills__language-level">{lang.level}</span>
                   </li>

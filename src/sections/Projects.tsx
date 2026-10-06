@@ -14,7 +14,6 @@ import { projects, type Project } from "../data/projects";
 import { iconMap } from "../utils/icons";
 import {
   container,
-  fadeIn,
   fadeScale,
   fadeUp,
   slideInLeft,

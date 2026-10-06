@@ -1,0 +1,228 @@
+/* ============================================================
+   SKILLS — section shell
+   ============================================================ */
+
+.skills {
+  padding-block: var(--section-padding-y);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* ============================================================
+   TECHNICAL COLUMNS
+   ============================================================ */
+
+.skills__columns {
+  margin-top: var(--space-16);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-12);
+}
+
+.skills__column {
+  min-width: 0;
+}
+
+.skills__column-label {
+  font-family: var(--font-support);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin: 0;
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  text-wrap: balance;
+}
+
+/* ---- Skill rows ---- */
+
+.skills__list {
+  list-style: none;
+  margin: var(--space-2) 0 0;
+  padding: 0;
+}
+
+.skill {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  align-items: baseline;
+  gap: var(--space-3);
+  padding-block: var(--space-3);
+}
+
+.skill + .skill {
+  border-top: 1px solid var(--color-border);
+}
+
+.skill__marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  color: var(--color-text-secondary);
+  transition: color var(--duration-fast) var(--ease-out);
+  align-self: center;
+}
+
+.skill:hover .skill__marker {
+  color: var(--color-text);
+}
+
+.skill__label {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
+  color: var(--color-text);
+}
+
+.skill__qualifier {
+  font-family: var(--font-support);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-secondary);
+  letter-spacing: var(--tracking-normal);
+}
+
+/* ============================================================
+   FOOTER — interpersonal skills + languages
+   ============================================================ */
+
+.skills__footer {
+  margin-top: var(--space-20);
+  padding-top: var(--space-10);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.skills__footer-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.skills__footer-label {
+  flex: none;
+  font-family: var(--font-support);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin: 0;
+  text-wrap: balance;
+}
+
+.skills__footer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3) var(--space-6);
+}
+
+/* Languages get a wider gap — each item is flag + name + level. */
+.skills__footer-list--languages {
+  gap: var(--space-3) var(--space-8);
+}
+
+.skills__footer-item {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text);
+  line-height: var(--leading-snug);
+}
+
+.skills__footer-level {
+  margin-left: var(--space-2);
+  font-family: var(--font-support);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-secondary);
+}
+
+/* ============================================================
+   TABLET & UP — three columns side by side
+   ============================================================ */
+
+@media (min-width: 900px) {
+  .skills__columns {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-12);
+  }
+}
+
+/* ============================================================
+   WIDE DESKTOP — a touch more air
+   ============================================================ */
+
+@media (min-width: 1280px) {
+  .skills__columns {
+    gap: var(--space-16);
+  }
+}
+
+/* ============================================================
+   LANGUAGE ITEM — flag + name + level
+   ============================================================ */
+
+.skills__language {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.skills__language-flag {
+  width: 18px;
+  height: 12px;
+  object-fit: cover;
+  border-radius: 1px;
+  box-shadow: 0 0 0 1px var(--color-border);
+  flex: none;
+  /* The SVG wrapper needs explicit display to avoid baseline gap. */
+  display: block;
+}
+
+.skills__language-name {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-text);
+}
+
+.skills__language-level {
+  font-family: var(--font-support);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  color: var(--color-text-secondary);
+}
+
+/* ============================================================
+   STACKED LAYOUT (< 900px) — tighten column gap, stronger break
+   Between stacked columns, use a smaller gap than desktop and
+   add a short top rule to each column after the first. This
+   gives each group a clear visual "restart" on phones and
+   tablets, without resorting to cards.
+   ============================================================ */
+
+@media (max-width: 899px) {
+  .skills__columns {
+    gap: var(--space-10);
+  }
+
+  /* Visual break between stacked columns */
+  .skills__column + .skills__column {
+    padding-top: var(--space-10);
+    border-top: 1px solid var(--color-border);
+  }
+}

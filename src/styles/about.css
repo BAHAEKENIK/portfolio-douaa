@@ -1,0 +1,279 @@
+/* ============================================================
+   ABOUT — section shell
+   ============================================================ */
+
+.about {
+  padding-block: var(--section-padding-y);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* ------------------------------------------------------------
+   Lead statement
+   ------------------------------------------------------------ */
+
+.about__lead {
+  margin-top: var(--space-16);
+  font-family: var(--font-sans);
+  font-size: clamp(1.5rem, 1.1rem + 1.9vw, 2.25rem);
+  font-weight: var(--weight-medium);
+  line-height: 1.25;
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+  max-width: 42ch;
+  text-wrap: balance;
+}
+
+.about__lead-secondary {
+  color: var(--color-text-secondary);
+}
+
+/* ------------------------------------------------------------
+   Two-column grid
+   ------------------------------------------------------------ */
+
+.about__grid {
+  margin-top: var(--space-20);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-16);
+}
+
+.about__column {
+  min-width: 0;
+}
+
+.about__subhead {
+  font-family: var(--font-support);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  margin: 0 0 var(--space-5);
+}
+
+@media (min-width: 900px) {
+  .about__subhead {
+    margin-bottom: var(--space-6);
+  }
+}
+
+/* ------------------------------------------------------------
+   Capabilities
+   ------------------------------------------------------------ */
+
+.capabilities {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--color-border);
+}
+
+.capability {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: var(--space-5);
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.capability__marker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  color: var(--color-text-secondary);
+  transition: color var(--duration-fast) var(--ease-out);
+}
+
+.capability:hover .capability__marker {
+  color: var(--color-text);
+}
+
+.capability__label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-text);
+  line-height: var(--leading-snug);
+}
+
+.capability__desc {
+  margin-top: var(--space-2);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 52ch;
+}
+
+/* ------------------------------------------------------------
+   Formation summary (replaces the old timeline)
+   ------------------------------------------------------------ */
+
+.about__formation-summary {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 40ch;
+}
+
+.about__see-more {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+  font-family: var(--font-support);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition:
+    color var(--duration-fast) var(--ease-out),
+    border-color var(--duration-fast) var(--ease-out);
+}
+
+/* Extended invisible click target — meets the 44px touch guidance
+   without changing the visual footprint. */
+.about__see-more::before {
+  content: "";
+  position: absolute;
+  inset: -12px -8px;
+  /* Sits under the link text; expands the tappable area only. */
+}
+
+.about__see-more:hover {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+.about__see-more-arrow {
+  display: inline-block;
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.about__see-more:hover .about__see-more-arrow {
+  transform: translateX(3px);
+}
+
+/* ------------------------------------------------------------
+   Final year project (focus block)
+   ------------------------------------------------------------ */
+
+.focus {
+  margin-top: var(--space-10);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--color-border);
+}
+
+.focus__label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-support);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.focus__dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  flex: none;
+}
+
+.focus__headline {
+  margin-top: var(--space-4);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text);
+  max-width: 46ch;
+}
+
+.focus__tags {
+  margin-top: var(--space-5);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.focus__tag {
+  font-family: var(--font-support);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  padding: 4px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  line-height: 1.4;
+  background-color: transparent;
+  white-space: nowrap;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.focus__tag:hover {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+/* ============================================================
+   TABLET & UP — two-column body
+   ============================================================ */
+
+@media (min-width: 900px) {
+  .about__grid {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: var(--space-20);
+  }
+
+  .about__lead {
+    margin-top: var(--space-20);
+  }
+}
+
+/* ============================================================
+   TABLET — keep text lines comfortable in single-column layout
+   ============================================================ */
+
+@media (min-width: 600px) and (max-width: 899px) {
+  .about__lead {
+    max-width: 52ch;
+  }
+
+  .capability__desc {
+    max-width: 60ch;
+  }
+
+  .focus__headline {
+    max-width: 58ch;
+  }
+}
+
+/* ============================================================
+   WIDE DESKTOP — slightly more lead air
+   ============================================================ */
+
+@media (min-width: 1280px) {
+  .about__grid {
+    gap: var(--space-24);
+  }
+
+  .about__lead {
+    max-width: 44ch;
+  }
+}

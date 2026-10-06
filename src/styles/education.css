@@ -1,0 +1,196 @@
+/* ============================================================
+   EDUCATION — section shell
+   ============================================================ */
+
+.education {
+  padding-block: var(--section-padding-y);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* ============================================================
+   TIMELINE
+   ============================================================ */
+
+.education__timeline {
+  position: relative;
+  margin-top: var(--space-16);
+  padding-left: 28px;
+}
+
+/* The spine — thinner and softer than Experience's */
+.education__line {
+  position: absolute;
+  left: 4px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background-color: var(--color-border);
+  transform-origin: top center;
+  will-change: transform;
+}
+
+.education__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.education__item {
+  position: relative;
+  padding-bottom: var(--space-10);
+}
+
+.education__item:last-child {
+  padding-bottom: 0;
+}
+
+/* Dot — smaller than Experience's 11px */
+.education__dot {
+  position: absolute;
+  left: -28px;
+  top: 5px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-text-secondary);
+  background-color: var(--color-bg);
+  z-index: 1;
+}
+
+.education__inner {
+  min-width: 0;
+}
+
+/* ---- Period ---- */
+
+.education__period {
+  display: block;
+  font-family: var(--font-support);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- Title ---- */
+
+.education__title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
+  color: var(--color-text);
+  max-width: 44ch;
+  text-wrap: balance;
+}
+
+/* ---- Institution · city ---- */
+
+.education__institution {
+  margin: var(--space-2) 0 0;
+  font-family: var(--font-support);
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  color: var(--color-text-secondary);
+}
+
+/* ---- Focus line ---- */
+
+.education__focus {
+  margin: var(--space-4) 0 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 54ch;
+  text-wrap: balance;
+}
+
+/* ============================================================
+   TABLET & UP — period moves to a fixed column left of the spine
+   ============================================================ */
+
+@media (min-width: 768px) {
+  .education__timeline {
+    padding-left: 200px;
+  }
+
+  .education__line {
+    left: 156px;
+  }
+
+  .education__item {
+    padding-bottom: var(--space-12);
+  }
+
+  .education__dot {
+    left: -48px;
+  }
+
+  .education__period {
+    position: absolute;
+    left: -200px;
+    top: 3px;
+    width: 140px;
+    margin-bottom: 0;
+    text-align: right;
+  }
+
+  .education__title {
+    font-size: var(--text-xl);
+  }
+}
+
+/* ============================================================
+   WIDE DESKTOP — a touch more air between entries
+   ============================================================ */
+
+@media (min-width: 1280px) {
+  .education__timeline {
+    padding-left: 220px;
+  }
+
+  .education__line {
+    left: 172px;
+  }
+
+  .education__dot {
+    left: -52px;
+  }
+
+  .education__period {
+    left: -220px;
+    width: 160px;
+  }
+
+  .education__item {
+    padding-bottom: var(--space-14, 3.5rem);
+  }
+}
+
+/* ============================================================
+   SMALL MOBILE — tighter entry spacing
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .education__item {
+    padding-bottom: var(--space-8);
+  }
+
+  .education__focus {
+    margin-top: var(--space-3);
+    padding-top: var(--space-3);
+    max-width: none;
+  }
+
+  .education__institution {
+    font-size: var(--text-xs);
+    margin-top: var(--space-1);
+  }
+}

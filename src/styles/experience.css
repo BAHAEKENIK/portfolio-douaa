@@ -1,0 +1,273 @@
+/* ============================================================
+   EXPERIENCE — section shell
+   ============================================================ */
+
+.experience {
+  padding-block: var(--section-padding-y);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* ============================================================
+   TIMELINE — mobile-first
+   ============================================================ */
+
+.timeline {
+  position: relative;
+  margin-top: var(--space-16);
+  padding-left: 32px;
+  /* Animating scaleY on the line inside — keep transforms local and
+     avoid an off-by-a-pixel clip at the endpoints. */
+  overflow: visible;
+}
+
+/* The vertical spine */
+.timeline__line {
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background-color: var(--color-border);
+  transform-origin: top center;
+  /* Framer Motion drives `scaleY`; keep rendering hints local to the line. */
+  will-change: transform;
+}
+
+.timeline__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline__item {
+  position: relative;
+  padding-bottom: var(--space-12);
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+/* The marker on the spine */
+.timeline__dot {
+  position: absolute;
+  left: -32px;
+  top: 5px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-text-secondary);
+  background-color: var(--color-bg);
+  z-index: 1;
+}
+
+.timeline__item--highlight .timeline__dot {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+}
+
+/* ---- Entry content ---- */
+
+.timeline__inner {
+  min-width: 0;
+}
+
+.timeline__period {
+  display: block;
+  font-family: var(--font-support);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3);
+}
+
+.timeline__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.timeline__role {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-snug);
+  color: var(--color-text);
+  margin: 0;
+}
+
+.timeline__company {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.timeline__title {
+  margin-top: var(--space-4);
+  font-size: var(--text-base);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-snug);
+  color: var(--color-text);
+  max-width: 56ch;
+}
+
+/* ---- Bullets ---- */
+
+.timeline__bullets {
+  margin-top: var(--space-4);
+  list-style: none;
+  padding: 0;
+}
+
+.timeline__bullet {
+  position: relative;
+  padding-left: var(--space-5);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+}
+
+.timeline__bullet + .timeline__bullet {
+  margin-top: var(--space-2);
+}
+
+/* Thin 8px dash before each bullet — editorial, not a generic dot */
+.timeline__bullet::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.72em;
+  width: 8px;
+  height: 1px;
+  background-color: var(--color-border);
+}
+
+/* ---- Tags ---- */
+
+.timeline__tags {
+  margin-top: var(--space-5);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+}
+
+.timeline__tag {
+  font-family: var(--font-support);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  padding: 4px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  line-height: 1.4;
+  white-space: nowrap;
+  transition:
+    border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out);
+}
+
+.timeline__tag:hover {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+/* One-shot pulse ring around the highlighted entry's dot.
+   Rendered by Framer Motion only for entries with `highlight: true`.
+   The element is stacked exactly behind the dot. */
+.timeline__dot-ring {
+  position: absolute;
+  left: -32px;
+  top: 5px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-accent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (min-width: 768px) {
+  .timeline__dot-ring {
+    left: -45.5px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .timeline__dot-ring {
+    left: -65.5px;
+  }
+}
+/* ============================================================
+   HIGHLIGHTED ENTRY
+   The dot alone marks the most recent mission. We reinforce it
+   by promoting the date from secondary to primary text colour.
+   Still exactly one accent point in the section (the orange dot);
+   the date darkens via charcoal, not orange, so the accent budget
+   stays under 2 %.
+   ============================================================ */
+
+.timeline__item--highlight .timeline__period {
+  color: var(--color-text);
+}
+/* ============================================================
+   TABLET & UP — dates move into a left column
+   ============================================================ */
+
+@media (min-width: 768px) {
+  .timeline {
+    padding-left: 220px;
+  }
+
+  .timeline__line {
+    left: 180px;
+  }
+
+  .timeline__item {
+    padding-bottom: var(--space-16);
+  }
+
+  .timeline__dot {
+    left: -45.5px;
+  }
+
+  /* Date pinned left of the spine, right-aligned */
+  .timeline__period {
+    position: absolute;
+    left: -220px;
+    top: 3px;
+    width: 170px;
+    margin-bottom: 0;
+    text-align: right;
+  }
+
+  .timeline__title {
+    font-size: var(--text-lg);
+    max-width: 60ch;
+  }
+}
+
+/* ============================================================
+   WIDE DESKTOP — a touch more air
+   ============================================================ */
+
+@media (min-width: 1280px) {
+  .timeline {
+    padding-left: 260px;
+  }
+
+  .timeline__line {
+    left: 200px;
+  }
+
+  .timeline__dot {
+    left: -65.5px;
+  }
+
+  .timeline__period {
+    left: -260px;
+    width: 180px;
+  }
+}

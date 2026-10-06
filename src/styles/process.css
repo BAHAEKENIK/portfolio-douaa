@@ -1,0 +1,181 @@
+/* ============================================================
+   PROCESS — section shell
+   ============================================================ */
+
+.process {
+  padding-block: var(--section-padding-y);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* ---- Intro paragraph ---- */
+
+.process__intro {
+  margin-top: var(--space-12);
+  max-width: 56ch;
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+  color: var(--color-text-secondary);
+}
+
+/* ============================================================
+   STEPS CONTAINER
+   Mobile default: single column, vertical connector
+   ============================================================ */
+
+.process__steps {
+  --process-gap: var(--space-10);
+  --dot-size: 11px;
+  --dot-half: 5.5px;
+
+  position: relative;
+  margin: var(--space-16) 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--process-gap);
+}
+
+/* ============================================================
+   STEP
+   ============================================================ */
+
+.process__step {
+  position: relative;
+  padding-left: 32px;
+}
+
+/* ---- Dot ---- */
+
+.process__dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  border: 1.5px solid var(--color-text-secondary);
+  background-color: var(--color-bg);
+  z-index: 1;
+}
+
+.process__step--highlight .process__dot {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* ---- Connector — real element, scroll-driven ---- */
+
+.process__connector {
+  position: absolute;
+  top: var(--dot-half);
+  left: calc(var(--dot-half) - 0.5px);
+  width: 1px;
+  height: calc(100% + var(--process-gap));
+  background-color: var(--color-border);
+  /* Y axis is the growing axis on stacked (mobile/tablet) layout. */
+  transform-origin: center top;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ---- Number ---- */
+
+.process__number {
+  display: block;
+  font-family: var(--font-support);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-text-secondary);
+  line-height: var(--dot-size);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- Title ---- */
+
+.process__title {
+  margin: var(--space-3) 0 0;
+  font-family: var(--font-sans);
+  font-size: clamp(1.375rem, 1.15rem + 0.8vw, 1.625rem);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.15;
+  color: var(--color-text);
+}
+
+/* ---- Body ---- */
+
+.process__body {
+  margin: var(--space-3) 0 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+  color: var(--color-text-secondary);
+  max-width: 42ch;
+  text-wrap: balance;
+}
+
+/* ============================================================
+   DESKTOP — 4 columns, horizontal connector
+   ============================================================ */
+
+@media (min-width: 900px) {
+  .process__steps {
+    --process-gap: var(--space-8);
+
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--process-gap);
+    margin-top: var(--space-20);
+  }
+
+  .process__step {
+    padding-left: 0;
+    padding-top: 28px; /* space above content, below the dot */
+  }
+
+  /* ---- Connector — horizontal on desktop ---- */
+
+  .process__connector {
+    top: var(--dot-half);
+    left: var(--dot-size);
+    right: calc(-1 * var(--process-gap) - var(--dot-half));
+    bottom: auto;
+    width: auto;
+    height: 1px;
+    /* X axis is the growing axis on the 4-column layout. */
+    transform-origin: left center;
+  }
+
+  /* ---- Number line-height reset ---- */
+
+  .process__number {
+    line-height: var(--leading-normal);
+  }
+}
+
+/* ============================================================
+   WIDE DESKTOP — a touch more air between columns
+   ============================================================ */
+
+@media (min-width: 1280px) {
+  .process__steps {
+    --process-gap: var(--space-10);
+  }
+}
+
+/* ============================================================
+   SMALL MOBILE — tighten stack so the vertical connector
+   doesn't feel stretched
+   ============================================================ */
+
+@media (max-width: 480px) {
+  .process__steps {
+    --process-gap: var(--space-8);
+  }
+}

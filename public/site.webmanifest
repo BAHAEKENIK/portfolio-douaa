@@ -1,0 +1,28 @@
+{
+  "name": "Douaa Bejou — Ingénieure en Génie Industriel",
+  "short_name": "Douaa Bejou",
+  "description": "Portfolio — qualité, amélioration continue, transformation digitale et développement logiciel.",
+  "lang": "fr",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F7F6F2",
+  "theme_color": "#202124",
+  "categories": ["portfolio", "business", "productivity"],
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

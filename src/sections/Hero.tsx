@@ -8,7 +8,7 @@ export function Hero() {
       <Container>
         <div className="hero__grid">
           <div className="hero__content">
-            <span className="eyebrow">Industrial Engineer</span>
+            <span className="eyebrow">Ingénieure en Génie Industriel</span>
 
             <h1 id="hero-title" className="hero__title">
               Douaa
@@ -17,16 +17,16 @@ export function Hero() {
             </h1>
 
             <p className="hero__positioning">
-              I combine industrial engineering, quality, data and software to
-              build practical solutions for real-world problems.
+              Je combine génie industriel, qualité, données et logiciel pour
+              construire des solutions concrètes à des problèmes réels.
             </p>
 
             <div className="hero__cta">
               <Button href="#projects" variant="primary" size="lg">
-                View Projects
+                Voir mes projets
               </Button>
               <Button href="#footer" variant="secondary" size="lg">
-                Contact Me
+                Me contacter
               </Button>
             </div>
           </div>
@@ -36,7 +36,7 @@ export function Hero() {
               <SmartImage
                 src="/portrait/douaa-portrait.png"
                 webpSrc="/portrait/douaa-portrait.webp"
-                alt="Portrait of Douaa Bejou"
+                alt="Portrait de Douaa Bejou"
                 width={800}
                 height={746}
                 loading="eager"

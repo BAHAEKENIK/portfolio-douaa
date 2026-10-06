@@ -1,4 +1,3 @@
-
 import type { IconName } from "../utils/icons";
 
 /**
@@ -58,7 +57,7 @@ export interface Language {
 export const skillCategories: SkillCategory[] = [
   {
     id: "quality-tools",
-    label: "Quality tools",
+    label: "Outils qualité",
     skills: [
       { id: "amdec",  label: "AMDEC",       icon: "shield-alert" },
       { id: "pareto", label: "Pareto",      icon: "bar-chart" },
@@ -69,7 +68,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     id: "lean-quality",
-    label: "Lean & Quality systems",
+    label: "Lean & Systèmes qualité",
     skills: [
       { id: "dmaic", label: "DMAIC",              icon: "refresh-cw" },
       { id: "5s",    label: "5S",                 icon: "layout-grid" },
@@ -87,7 +86,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     id: "digital",
-    label: "Digital & software",
+    label: "Digital & logiciel",
     skills: [
       { id: "python", label: "Python",  icon: "terminal" },
       { id: "java",   label: "Java",    icon: "coffee" },

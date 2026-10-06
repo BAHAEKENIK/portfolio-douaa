@@ -46,7 +46,7 @@ export function Skills() {
   return (
     <section className="skills" aria-labelledby="skills-title">
       <Container>
-        <SectionHeader title="Skills" index="04" id="skills-title" />
+        <SectionHeader title="Compétences" index="04" id="skills-title" />
 
         {/* ---- Three technical columns ---- */}
         <motion.div
@@ -108,7 +108,7 @@ export function Skills() {
             className="skills__footer-row"
             variants={footerRowVariant}
           >
-            <h3 className="skills__footer-label">Interpersonal</h3>
+            <h3 className="skills__footer-label">Savoir-être</h3>
             <ul className="skills__footer-list">
               {interpersonalSkills.map((item) => (
                 <li key={item.id} className="skills__footer-item">
@@ -122,7 +122,7 @@ export function Skills() {
             className="skills__footer-row"
             variants={footerRowVariant}
           >
-            <h3 className="skills__footer-label">Languages</h3>
+            <h3 className="skills__footer-label">Langues</h3>
             <ul className="skills__footer-list skills__footer-list--languages">
               {languages.map((lang) => {
                 const Flag = flagMap[lang.countryCode];

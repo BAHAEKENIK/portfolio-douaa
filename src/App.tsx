@@ -6,16 +6,6 @@ import { SectionSkeleton } from "./components/layout/SectionSkeleton";
 import { Hero } from "./sections/Hero";
 import { About } from "./sections/About";
 
-/**
- * Lazy-loaded sections.
- *
- * Every section below the fold is code-split. Each module is only
- * fetched once the LazySection wrapper comes within ~400px of the
- * viewport. Until then, the wrapper renders a matching skeleton.
- *
- * Note: each section exports a named function (not default), so we
- * adapt the module's namespace to the shape React.lazy expects.
- */
 const LazyExperience = lazy(() =>
   import("./sections/Experience").then((m) => ({ default: m.Experience })),
 );
@@ -56,7 +46,7 @@ function App() {
           id="projects"
           estimateHeight={2400}
           dark
-          skeleton={<SectionSkeleton kind="blocks" rows={3} />}
+          skeleton={<SectionSkeleton kind="projects" rows={3} />}
         >
           <LazyProjects />
         </LazySection>
@@ -72,7 +62,7 @@ function App() {
         <LazySection
           id="process"
           estimateHeight={500}
-          skeleton={<SectionSkeleton kind="blocks" rows={4} />}
+          skeleton={<SectionSkeleton kind="process" rows={4} />}
         >
           <LazyProcess />
         </LazySection>

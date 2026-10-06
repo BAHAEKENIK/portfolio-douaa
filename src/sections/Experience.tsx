@@ -24,10 +24,6 @@ export function Experience() {
   const isReduced = !!reduce;
   const timelineRef = useRef<HTMLDivElement>(null);
 
-  /* ---------------------------------------------------------- */
-  /*  Scroll-linked spine draw                                   */
-  /* ---------------------------------------------------------- */
-
   const { scrollYProgress } = useScroll({
     target: timelineRef,
     offset: ["start 85%", "end 15%"],
@@ -39,10 +35,6 @@ export function Experience() {
     restDelta: 0.001,
   });
 
-  /* ---------------------------------------------------------- */
-  /*  Variants — from the shared motion system                   */
-  /* ---------------------------------------------------------- */
-
   const itemVariants = container(isReduced, STAGGER.base, 0.05);
   const dotVariants = fadeScale(isReduced, 0.6, DURATION.fast);
   const contentVariants = fadeUp(isReduced, 16, DURATION.slow);
@@ -50,7 +42,11 @@ export function Experience() {
   return (
     <section className="experience" aria-labelledby="experience-title">
       <Container>
-        <SectionHeader title="Experience" index="02" id="experience-title" />
+        <SectionHeader
+          title="Expérience"
+          index="02"
+          id="experience-title"
+        />
 
         <div className="timeline" ref={timelineRef}>
           <motion.div
@@ -106,11 +102,9 @@ export function Experience() {
                     </p>
                   </header>
 
-                  <p className="timeline__title" lang="fr">
-                    {entry.title}
-                  </p>
+                  <p className="timeline__title">{entry.title}</p>
 
-                  <ul className="timeline__bullets" lang="fr">
+                  <ul className="timeline__bullets">
                     {entry.bullets.map((bullet) => (
                       <li key={bullet} className="timeline__bullet">
                         {bullet}

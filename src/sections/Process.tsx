@@ -57,7 +57,7 @@ export function Process() {
   return (
     <section className="process" aria-labelledby="process-title">
       <Container>
-        <SectionHeader title="How I Work" index="05" id="process-title" />
+        <SectionHeader title="Ma méthode" index="05" id="process-title" />
 
         <p className="process__intro">{processIntro}</p>
 

@@ -1,0 +1,10 @@
+# Douaa Bejou — Portfolio
+# https://portfolio-douaa.vercel.app
+
+User-agent: *
+Allow: /
+
+# No disallowed paths — everything on this site is meant to be indexed.
+
+# Sitemap location
+Sitemap: https://portfolio-douaa.vercel.app/sitemap.xml

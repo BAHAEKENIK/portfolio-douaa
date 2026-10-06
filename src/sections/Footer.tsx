@@ -57,7 +57,7 @@ export function Footer() {
           {/* ---- Socials ---- */}
           <motion.nav
             className="footer__socials"
-            aria-label="Contact and social links"
+            aria-label="Contact et réseaux sociaux"
             variants={socialsContainer}
             initial="hidden"
             whileInView="visible"

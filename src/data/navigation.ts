@@ -5,11 +5,11 @@ export interface NavItem {
 }
 
 export const navItems: NavItem[] = [
-  { label: "Home", href: "#home", id: "home" },
-  { label: "About", href: "#about", id: "about" },
-  { label: "Experience", href: "#experience", id: "experience" },
-  { label: "Projects", href: "#projects", id: "projects" },
-  { label: "Skills", href: "#skills", id: "skills" },
+  { label: "Accueil", href: "#home", id: "home" },
+  { label: "À propos", href: "#about", id: "about" },
+  { label: "Expérience", href: "#experience", id: "experience" },
+  { label: "Projets", href: "#projects", id: "projects" },
+  { label: "Compétences", href: "#skills", id: "skills" },
 ];
 
 export const siteName = "Douaa Bejou";

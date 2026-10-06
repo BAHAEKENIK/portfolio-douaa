@@ -1,11 +1,7 @@
 import { Container } from "../components/layout/Container";
 import { SectionHeader } from "../components/layout/SectionHeader";
 import { Icon } from "../components/ui/Icon";
-import {
-  aboutLead,
-  capabilities,
-  focusBlock,
-} from "../data/about";
+import { aboutLead, capabilities, focusBlock } from "../data/about";
 import { aboutSummary } from "../data/education";
 import { iconMap } from "../utils/icons";
 
@@ -20,11 +16,12 @@ function splitLead(text: string): { primary: string; secondary?: string } {
 
 export function About() {
   const lead = splitLead(aboutLead);
+  const focus = splitLead(focusBlock.headline);
 
   return (
     <section id="about" className="about" aria-labelledby="about-title">
       <Container>
-        <SectionHeader title="About" index="01" id="about-title" />
+        <SectionHeader title="À propos" index="01" id="about-title" />
 
         <p className="about__lead">
           {lead.primary}
@@ -38,7 +35,7 @@ export function About() {
 
         <div className="about__grid">
           <div className="about__column">
-            <h3 className="about__subhead">Capabilities</h3>
+            <h3 className="about__subhead">Compétences</h3>
 
             <ul className="capabilities">
               {capabilities.map((cap) => (
@@ -73,8 +70,15 @@ export function About() {
                 {focusBlock.label}
               </span>
               <p className="focus__headline">
-                <span lang="fr">{focusBlock.headlineFr}</span>{" "}
-                {focusBlock.headlineEn}
+                {focus.primary}
+                {focus.secondary && (
+                  <>
+                    {" — "}
+                    <span className="about__lead-secondary">
+                      {focus.secondary}
+                    </span>
+                  </>
+                )}
               </p>
               <ul className="focus__tags">
                 {focusBlock.tags.map((tag) => (

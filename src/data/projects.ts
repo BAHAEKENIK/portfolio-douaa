@@ -1,16 +1,15 @@
-/**
- * Projects section content.
- *
- * Content sourcing — every string in this file is tagged:
- *   [CV] — verbatim (or directly translated) from the CV
- *   [I]  — interpretation written for narrative structure;
- *          review before publishing, correct freely.
- *
- * No project has an external link, and no project has an image.
- * Technology icons are rendered from the `icon` field via utils/icons.ts.
- */
-
 import type { IconName } from "../utils/icons";
+
+/**
+ * Contenu de la section « Projets ».
+ *
+ * Sources :
+ *   [CV] — extrait du CV de Douaa Bejou
+ *   [É]  — interprétation éditoriale (les formulations « problème » et
+ *          « solution » sont des reformulations narratives)
+ *
+ * Aucun projet n'a de lien externe, aucun projet n'a d'image.
+ */
 
 export interface ProjectTechnology {
   id: string;
@@ -20,44 +19,36 @@ export interface ProjectTechnology {
 
 export interface Project {
   id: string;
-  /** Zero-padded number shown as a ghost numeral. */
   number: string;
-  /** [CV] Project name — short, memorable. */
   name: string;
-  /** [CV] Two- or three-theme category line, joined by ·. */
   category: string;
-  /** [CV] One-line context: role · period · company, city. */
   context: string;
-  /** [I] Problem statement — 1–2 sentences. */
   problem: string;
-  /** [I] Solution statement — 1–2 sentences. */
   solution: string;
-  /** [CV] Concrete deliverables. */
   deliverables: string[];
-  /** [CV] Technologies and methods. */
   technologies: ProjectTechnology[];
 }
 
 /* ------------------------------------------------------------------ */
-/*  PROJECTS — ordered most recent first                               */
+/*  PROJETS — du plus récent au plus ancien                            */
 /* ------------------------------------------------------------------ */
 
 export const projects: Project[] = [
   {
     id: "scrap-platform",
     number: "01",
-    name: "SCRAP Analysis Platform",
-    category: "Quality · Digitalisation · Software",
-    context: "Final Year Project · 2026 · Hutchinson Maroc, Tanger",
+    name: "Plateforme d'analyse SCRAP",
+    category: "Qualité · Digitalisation · Logiciel",
+    context: "Projet de fin d'études · 2026 · Hutchinson Maroc, Tanger",
     problem:
-      "SCRAP was tracked across disconnected spreadsheets. Analysing trends was slow, and root-cause investigations lacked a single source of truth.",
+      "Le SCRAP était suivi dans des tableurs dispersés. L'analyse des tendances était lente et les investigations de causes racines manquaient d'une source unique de vérité.",
     solution:
-      "A web application that centralises SCRAP tracking and analysis, backed by a migration of quality data and procedures to SAP QM.",
+      "Une application web qui centralise le suivi et l'analyse du SCRAP, appuyée par une migration des données et des procédures qualité vers SAP QM.",
     deliverables: [
-      "Analysis and diagnosis of existing quality processes.",
-      "Preparation of procedures and data for the SAP QM migration.",
-      "Functional testing and user training on SAP QM.",
-      "Web application for SCRAP monitoring and analysis.",
+      "Analyse et diagnostic des processus qualité existants.",
+      "Préparation des procédures et des données pour la migration vers SAP QM.",
+      "Tests fonctionnels et formation des utilisateurs sur SAP QM.",
+      "Application web de suivi et d'analyse du SCRAP.",
     ],
     technologies: [
       { id: "react", label: "React", icon: "atom" },
@@ -69,46 +60,46 @@ export const projects: Project[] = [
   {
     id: "production-performance",
     number: "02",
-    name: "Production Performance Improvement",
-    category: "Lean · Continuous Improvement",
-    context: "End-of-Year Project · 2024 · Delfingen MA Tanger 2",
+    name: "Amélioration de la performance de production",
+    category: "Lean · Amélioration continue",
+    context: "Projet de fin d'année · 2024 · Delfingen MA Tanger 2",
     problem:
-      "SCRAP on production lines was measured but not systematically analysed. Root causes were addressed reactively rather than prevented.",
+      "Le SCRAP sur les lignes de production était mesuré mais pas analysé de manière systématique. Les causes racines étaient traitées de manière réactive plutôt que préventive.",
     solution:
-      "A DMAIC-driven analysis using Pareto and Ishikawa to identify root causes, followed by corrective action plans and a KPI tracking tool for continuous follow-up.",
+      "Une analyse menée avec DMAIC, Pareto et Ishikawa pour identifier les causes racines, suivie de plans d'actions correctives et d'un outil de suivi des KPI.",
     deliverables: [
-      "Root-cause analysis using DMAIC, Pareto and Ishikawa.",
-      "Corrective and preventive action plans to reduce SCRAP.",
-      "Defect analysis and preventive maintenance follow-up.",
-      "KPI tracking tool for production performance.",
-      "Operator training on best practices and waste reduction.",
+      "Analyse des causes racines avec DMAIC, Pareto et Ishikawa.",
+      "Plans d'actions correctives et préventives pour réduire le SCRAP.",
+      "Analyse des défauts et suivi de la maintenance préventive.",
+      "Outil de suivi des KPI de performance de production.",
+      "Sensibilisation des opérateurs aux bonnes pratiques et à la réduction des déchets.",
     ],
     technologies: [
       { id: "dmaic", label: "DMAIC", icon: "refresh-cw" },
       { id: "pareto", label: "Pareto", icon: "bar-chart" },
       { id: "ishikawa", label: "Ishikawa", icon: "git-branch" },
-      { id: "kpi", label: "KPI tracking", icon: "gauge" },
+      { id: "kpi", label: "Suivi KPI", icon: "gauge" },
     ],
   },
   {
     id: "project-manager",
     number: "03",
-    name: "Project Management Web Application",
-    category: "Software · Project Management",
-    context: "Final Year Project · 2023 · MediaCaris",
+    name: "Application web de gestion de projet",
+    category: "Logiciel · Gestion de projet",
+    context: "Projet de fin d'études · 2023 · MediaCaris",
     problem:
-      "Projects, tasks and user assignments were tracked across multiple tools with no single view of progress.",
+      "Les projets, tâches et affectations utilisateurs étaient suivis dans plusieurs outils, sans vue unique de l'avancement.",
     solution:
-      "A web application for managing projects, tasks and users — with real-time task assignment and progress tracking.",
+      "Une application web de gestion des projets, des tâches et des utilisateurs — avec affectation et suivi des tâches en temps réel.",
     deliverables: [
-      "Project, task and user management.",
-      "Real-time task assignment and tracking.",
-      "Centralised view of progress across the team.",
+      "Gestion des projets, des tâches et des utilisateurs.",
+      "Affectation et suivi des tâches en temps réel.",
+      "Vue centralisée de l'avancement pour toute l'équipe.",
     ],
     technologies: [
-      { id: "web", label: "Web application", icon: "globe" },
-      { id: "realtime", label: "Real-time", icon: "activity" },
-      { id: "multi-user", label: "Multi-user", icon: "users" },
+      { id: "web", label: "Application web", icon: "globe" },
+      { id: "realtime", label: "Temps réel", icon: "activity" },
+      { id: "multi-user", label: "Multi-utilisateur", icon: "users" },
     ],
   },
 ];

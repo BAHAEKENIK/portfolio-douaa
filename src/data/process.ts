@@ -1,60 +1,48 @@
 /**
- * How I Work section content.
+ * Contenu de la section « Ma méthode ».
  *
- * The four steps connect industrial engineering and software:
- * understand the real problem, analyse it with data and structured
- * methods, build the solution as a practical tool, then measure and
- * improve continuously.
- *
- * Text is sourced from the project brief. Each step is intentionally
- * minimal — a single verb for the title and one sentence for the body.
- * Padding these would dilute the section.
+ * Les quatre étapes font le lien entre génie industriel et logiciel :
+ * comprendre le vrai problème, l'analyser avec des données et des
+ * méthodes structurées, construire la solution comme un outil
+ * concret, puis mesurer et améliorer en continu.
  */
 
 export interface ProcessStep {
   id: string;
-  /** Zero-padded sequence number — "01", "02", "03", "04". */
   number: string;
-  /** Single-verb title — Understand, Analyse, Build, Improve. */
   title: string;
-  /** One-sentence description of what happens in this step. */
   body: string;
-  /**
-   * When true, the step's dot is filled with the accent colour.
-   * Exactly one step should have this set — the one that starts
-   * the process.
-   */
   highlight?: boolean;
 }
 
 export const processSteps: ProcessStep[] = [
   {
-    id: "understand",
+    id: "comprendre",
     number: "01",
-    title: "Understand",
-    body: "Understand the process and the real problem.",
+    title: "Comprendre",
+    body: "Comprendre le processus et le vrai problème.",
     highlight: true,
   },
   {
-    id: "analyse",
+    id: "analyser",
     number: "02",
-    title: "Analyse",
-    body: "Use data and structured methods to identify causes.",
+    title: "Analyser",
+    body: "Utiliser les données et des méthodes structurées pour identifier les causes.",
   },
   {
-    id: "build",
+    id: "construire",
     number: "03",
-    title: "Build",
-    body: "Transform the solution into a practical digital tool.",
+    title: "Construire",
+    body: "Transformer la solution en un outil numérique concret.",
   },
   {
-    id: "improve",
+    id: "ameliorer",
     number: "04",
-    title: "Improve",
-    body: "Measure results and continuously improve.",
+    title: "Améliorer",
+    body: "Mesurer les résultats et améliorer en continu.",
   },
 ];
 
-/** Short intro paragraph shown above the four steps. */
+/** Phrase d'introduction affichée au-dessus des quatre étapes. */
 export const processIntro =
-  "I connect industrial engineering and software by working through a structured four-step process.";
+  "Je fais le lien entre génie industriel et logiciel à travers une méthode structurée en quatre étapes.";

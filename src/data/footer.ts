@@ -38,8 +38,8 @@ export interface FooterData {
 
 export const footer: FooterData = {
   name: "Douaa Bejou",
-  role: "Industrial Engineer",
-  tagline: ["Quality", "Digital Transformation", "Technology"],
+  role: "Ingénieure en Génie Industriel",
+  tagline: ["Qualité", "Transformation digitale", "Technologie"],
   socials: [
     {
       id: "github",
@@ -53,7 +53,7 @@ export const footer: FooterData = {
       id: "linkedin",
       label: "LinkedIn",
       // TODO: replace with real profile URL
-      href: "https://linkedin.com/in/douaa-bejou",
+      href: "https://www.linkedin.com/in/douaabejou/",
       icon: "linkedin",
       external: true,
     },
@@ -61,7 +61,7 @@ export const footer: FooterData = {
       id: "email",
       label: "Email",
       // TODO: replace with real address
-      href: "mailto:douaa.bejou@example.com",
+      href: "mailto:bejoudouaa@gmail.com",
       icon: "mail",
       external: false,
     },

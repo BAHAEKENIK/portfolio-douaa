@@ -2,43 +2,29 @@
  * Experience section content.
  *
  * All entries are sourced from Douaa Bejou's CV (BEJOU_douaa (4).pdf).
- * French phrases are kept verbatim — the render layer tags them with
- * lang="fr" for correct screen-reader pronunciation.
  */
 
 export interface ExperienceEntry {
   id: string;
-  /** Display string — e.g. "02/2026 – 07/2026". */
   period: string;
-  /** Neutral role category shown as the timeline header. */
   role: string;
-  /** Company name. */
   company: string;
-  /** City — optional; the CV omits it for some entries. */
   location?: string;
-  /** French mission title from the CV — rendered with lang="fr". */
   title: string;
-  /** Bullet points — each is a concrete task or outcome. */
   bullets: string[];
-  /** Methods / tools used on this mission. */
   tags: string[];
-  /**
-   * When true, the timeline renders a small orange dot for this entry.
-   * Exactly one entry should have this set — the most recent / most
-   * relevant one.
-   */
   highlight?: boolean;
 }
 
 /* ------------------------------------------------------------------ */
-/*  EXPERIENCE ENTRIES — ordered most recent first                     */
+/*  EXPÉRIENCES — de la plus récente à la plus ancienne                */
 /* ------------------------------------------------------------------ */
 
 export const experience: ExperienceEntry[] = [
   {
     id: "hutchinson",
     period: "02/2026 – 07/2026",
-    role: "Final Year Project",
+    role: "Projet de Fin d'Études",
     company: "Hutchinson Maroc",
     location: "Tanger",
     title: "Digitalisation des processus qualité",
@@ -48,13 +34,13 @@ export const experience: ExperienceEntry[] = [
       "Réalisation des tests fonctionnels et formation des utilisateurs SAP QM.",
       "Développement d'une application web de suivi et d'analyse du SCRAP.",
     ],
-    tags: ["SAP QM", "SCRAP analysis", "React", "Java", "SQL"],
+    tags: ["SAP QM", "Analyse SCRAP", "React", "Java", "SQL"],
     highlight: true,
   },
   {
     id: "delfingen",
     period: "07/2024 – 09/2024",
-    role: "Final Year Project",
+    role: "Projet de Fin d'Année",
     company: "Delfingen MA Tanger 2",
     location: "Tanger",
     title: "Analyse et amélioration de la performance de production",
@@ -65,18 +51,18 @@ export const experience: ExperienceEntry[] = [
       "Mise en place d'un outil de suivi et des KPI de performance.",
       "Sensibilisation des opérateurs aux bonnes pratiques et à la réduction des déchets.",
     ],
-    tags: ["DMAIC", "Pareto", "Ishikawa", "KPI tracking", "Lean"],
+    tags: ["DMAIC", "Pareto", "Ishikawa", "Suivi des KPI", "Lean"],
   },
   {
     id: "mediacaris",
     period: "04/2023 – 06/2023",
-    role: "Final Year Project",
+    role: "Projet de Fin d'Études",
     company: "MediaCaris",
     title: "Développement d'une application web de gestion de projet",
     bullets: [
       "Gestion des projets, des tâches et des utilisateurs.",
       "Affectation et suivi des tâches en temps réel.",
     ],
-    tags: ["Web application", "Project management", "Real-time tracking"],
+    tags: ["Application web", "Gestion de projet", "Suivi en temps réel"],
   },
 ];

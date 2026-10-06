@@ -132,7 +132,7 @@ function ProjectEntry({ project, reduce }: ProjectEntryProps) {
         <motion.div variants={blockVariant}>
           <dl className="project__panels">
             <div className="panel">
-              <dt className="panel__label">Problem</dt>
+              <dt className="panel__label">Problème</dt>
               <dd className="panel__body">{project.problem}</dd>
             </div>
             <div className="panel">
@@ -178,11 +178,11 @@ export function Projects() {
 
   return (
     <section
-  className="section--dark projects"
-  aria-labelledby="projects-title"
->
+      className="section--dark projects"
+      aria-labelledby="projects-title"
+    >
       <Container>
-        <SectionHeader title="Projects" index="03" id="projects-title" />
+        <SectionHeader title="Projets" index="03" id="projects-title" />
 
         <ol className="projects__list">
           {projects.map((project) => (

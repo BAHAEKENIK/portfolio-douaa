@@ -1,31 +1,22 @@
 /**
- * Education section content.
+ * Contenu de la section « Formation ».
  *
- * Degrees and institutions are sourced from Douaa Bejou's CV
+ * Les diplômes et les établissements proviennent du CV de Douaa Bejou
  * (BEJOU_douaa (4).pdf).
- *
- * Focus lines are editorial — they describe what each degree covered.
- * They are accurate for the Diplôme d'Ingénieur and Licence (inferred
- * from the CV's technical skills), and are standard French-curriculum
- * descriptions for the DEUST and Baccalauréat. Review and correct freely.
  */
 
 export interface EducationEntry {
   id: string;
-  /** Display string — e.g. "2023 – 2026". */
   period: string;
-  /** Degree name in French — rendered with lang="fr". */
   title: string;
-  /** Institution in French — rendered with lang="fr". */
   institution: string;
-  /** City — plain text, no lang override. */
   location: string;
-  /** One-line focus description. */
+  /** Ligne de focus — description éditoriale du contenu du diplôme. */
   focus: string;
 }
 
 /* ------------------------------------------------------------------ */
-/*  EDUCATION ENTRIES — most recent first                              */
+/*  DIPLÔMES — du plus récent au plus ancien                           */
 /* ------------------------------------------------------------------ */
 
 export const education: EducationEntry[] = [
@@ -36,7 +27,7 @@ export const education: EducationEntry[] = [
     institution: "Faculté des Sciences et Techniques",
     location: "Tanger",
     focus:
-      "Industrial systems, quality management, continuous improvement, and applied software.",
+      "Systèmes industriels, management de la qualité, amélioration continue et logiciel appliqué.",
   },
   {
     id: "licence",
@@ -45,15 +36,16 @@ export const education: EducationEntry[] = [
     institution: "Faculté des Sciences et Techniques",
     location: "Tanger",
     focus:
-      "Computer science fundamentals — programming, algorithms, databases, and web development.",
+      "Fondamentaux informatiques — programmation, algorithmes, bases de données et développement web.",
   },
   {
     id: "deust",
     period: "2020 – 2022",
-    title: "Diplôme d'Études Universitaires en Sciences et Techniques (DEUST)",
+    title:
+      "Diplôme d'Études Universitaires en Sciences et Techniques (DEUST)",
     institution: "Faculté des Sciences et Techniques",
     location: "Tanger",
-    focus: "Foundational mathematics, physics, and computer science.",
+    focus: "Mathématiques, physique et informatique fondamentales.",
   },
   {
     id: "bac",
@@ -61,19 +53,16 @@ export const education: EducationEntry[] = [
     title: "Baccalauréat Sciences Physiques",
     institution: "Lycée Abdelkrim El Khattabi",
     location: "Nador",
-    focus: "Mathematics, physics, and chemistry.",
+    focus: "Mathématiques, physique et chimie.",
   },
 ];
 
 /* ------------------------------------------------------------------ */
-/*  ABOUT SUMMARY — short line + anchor link into Education            */
+/*  RÉSUMÉ AFFICHÉ DANS « À PROPOS »                                   */
 /* ------------------------------------------------------------------ */
 
 export const aboutSummary = {
-  /** Summary sentence shown in About's right column. */
-  text: "Four degrees from the Faculté des Sciences et Techniques de Tanger, 2019–2026.",
-  /** Anchor target for the "See Education" link. */
+  text: "Quatre diplômes de la Faculté des Sciences et Techniques de Tanger, 2019–2026.",
   href: "#education",
-  /** Link label. */
-  linkLabel: "See Education",
+  linkLabel: "Voir la formation",
 };

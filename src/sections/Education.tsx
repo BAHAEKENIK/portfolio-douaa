@@ -30,7 +30,7 @@ export function Education() {
   return (
     <section className="education" aria-labelledby="education-title">
       <Container>
-        <SectionHeader title="Education" index="06" id="education-title" />
+        <SectionHeader title="Formation" index="06" id="education-title" />
 
         <div className="education__timeline">
           <motion.div
@@ -74,7 +74,6 @@ export function Education() {
 
                   <motion.h3
                     className="education__title"
-                    lang="fr"
                     variants={contentVariants}
                   >
                     {entry.title}
@@ -84,9 +83,7 @@ export function Education() {
                     className="education__institution"
                     variants={contentVariants}
                   >
-                    <span lang="fr">{entry.institution}</span>
-                    {" · "}
-                    {entry.location}
+                    {entry.institution} · {entry.location}
                   </motion.p>
 
                   <motion.p

@@ -1,10 +1,94 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ============================================================
+         PRIMARY META
+         ============================================================ -->
+    <title>Douaa Bejou — Ingénieure en Génie Industriel</title>
+    <meta
+      name="description"
+      content="Ingénieure en Génie Industriel spécialisée en qualité, amélioration continue, transformation digitale et développement logiciel. Portfolio — projets, expérience et formation."
+    />
+    <meta name="author" content="Douaa Bejou" />
+    <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#F7F6F2" />
 
+    <!-- ============================================================
+         CANONICAL
+         ⚠️ Replace https://douaa-bejou.com with the real domain.
+         ============================================================ -->
+    <link rel="canonical" href="https://douaa-bejou.com/" />
+
+    <!-- ============================================================
+         FAVICON SET
+         ⚠️ Files provided in Phase 16B.
+         ============================================================ -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- ============================================================
+         OPEN GRAPH — Facebook, LinkedIn, WhatsApp previews
+         ⚠️ og:url and og:image use placeholder domain + asset.
+         ============================================================ -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:url" content="https://douaa-bejou.com/" />
+    <meta property="og:site_name" content="Douaa Bejou" />
+    <meta
+      property="og:title"
+      content="Douaa Bejou — Ingénieure en Génie Industriel"
+    />
+    <meta
+      property="og:description"
+      content="Ingénieure en Génie Industriel — qualité, amélioration continue, transformation digitale et développement logiciel."
+    />
+    <meta property="og:image" content="https://douaa-bejou.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Douaa Bejou, Ingénieure en Génie Industriel"
+    />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="profile:first_name" content="Douaa" />
+    <meta property="profile:last_name" content="Bejou" />
+
+    <!-- ============================================================
+         TWITTER / X CARD
+         ============================================================ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Douaa Bejou — Ingénieure en Génie Industriel"
+    />
+    <meta
+      name="twitter:description"
+      content="Qualité, amélioration continue, transformation digitale et développement logiciel."
+    />
+    <meta name="twitter:image" content="https://douaa-bejou.com/og-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="Douaa Bejou, Ingénieure en Génie Industriel"
+    />
+
+    <!-- Preload the Hero portrait — this is the LCP element.
+         `type="image/webp"` means non-WebP browsers ignore this preload
+         and fall back to the PNG the <picture> resolves to. -->
+    <link
+      rel="preload"
+      as="image"
+      href="/portrait/douaa-portrait.webp"
+      type="image/webp"
+      fetchpriority="high"
+    />
+
+    <!-- ============================================================
+         FONTS
+         ============================================================ -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,11 +96,57 @@
       rel="stylesheet"
     />
 
-    <title>Douaa Bejou — Industrial Engineer</title>
-    <meta
-      name="description"
-      content="Douaa Bejou — Industrial Engineer specialized in Quality, Continuous Improvement, Digital Transformation and Software."
-    />
+    <!-- ============================================================
+         STRUCTURED DATA — Person schema (Google rich results)
+         Helps Google understand this is a professional profile.
+         ============================================================ -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Douaa Bejou",
+        "url": "https://douaa-bejou.com/",
+        "image": "https://douaa-bejou.com/og-image.png",
+        "jobTitle": "Ingénieure en Génie Industriel",
+        "description": "Ingénieure en Génie Industriel spécialisée en qualité, amélioration continue, transformation digitale et développement logiciel.",
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Faculté des Sciences et Techniques de Tanger"
+          },
+          {
+            "@type": "EducationalOrganization",
+            "name": "Lycée Abdelkrim El Khattabi, Nador"
+          }
+        ],
+        "knowsAbout": [
+          "Génie Industriel",
+          "Management de la qualité",
+          "Lean Six Sigma",
+          "AMDEC",
+          "DMAIC",
+          "SAP Quality Management",
+          "Python",
+          "Java",
+          "React",
+          "SQL"
+        ],
+        "knowsLanguage": [
+          { "@type": "Language", "name": "Français" },
+          { "@type": "Language", "name": "Arabe" },
+          { "@type": "Language", "name": "Anglais" }
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Tanger",
+          "addressCountry": "MA"
+        },
+        "sameAs": [
+          "https://github.com/douaa-bejou",
+          "https://www.linkedin.com/in/douaabejou/"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

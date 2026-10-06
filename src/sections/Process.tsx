@@ -55,7 +55,7 @@ export function Process() {
   const textVariants = fadeUp(isReduced, 8, DURATION.fast);
 
   return (
-    <section id="process" className="process" aria-labelledby="process-title">
+    <section className="process" aria-labelledby="process-title">
       <Container>
         <SectionHeader title="How I Work" index="05" id="process-title" />
 

@@ -44,7 +44,7 @@ export function Skills() {
   const footerRowVariant = fadeUp(isReduced, 12, DURATION.base);
 
   return (
-    <section id="skills" className="skills" aria-labelledby="skills-title">
+    <section className="skills" aria-labelledby="skills-title">
       <Container>
         <SectionHeader title="Skills" index="04" id="skills-title" />
 

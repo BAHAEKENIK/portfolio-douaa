@@ -48,11 +48,7 @@ export function Experience() {
   const contentVariants = fadeUp(isReduced, 16, DURATION.slow);
 
   return (
-    <section
-      id="experience"
-      className="experience"
-      aria-labelledby="experience-title"
-    >
+    <section className="experience" aria-labelledby="experience-title">
       <Container>
         <SectionHeader title="Experience" index="02" id="experience-title" />
 
@@ -73,7 +69,7 @@ export function Experience() {
                 variants={itemVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={VIEWPORT.base}
+                viewport={VIEWPORT.early}
               >
                 {entry.highlight && !isReduced && (
                   <motion.span

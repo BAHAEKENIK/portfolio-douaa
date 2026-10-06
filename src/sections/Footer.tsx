@@ -1,15 +1,42 @@
+import { motion, useReducedMotion } from "framer-motion";
+
 import { Container } from "../components/layout/Container";
 import { Icon } from "../components/ui/Icon";
 import { footer } from "../data/footer";
 import { iconMap } from "../utils/icons";
+import {
+  container,
+  fadeIn,
+  fadeUp,
+  slideInRight,
+  DURATION,
+  STAGGER,
+  VIEWPORT,
+} from "../utils/motion";
 
 export function Footer() {
+  const reduce = useReducedMotion();
+  const isReduced = !!reduce;
+
+  /* ---- Variants from the shared motion system ---- */
+
+  const identityVariants = fadeUp(isReduced, 16, DURATION.slow);
+  const socialsContainer = container(isReduced, STAGGER.base, 0.2);
+  const socialItem = slideInRight(isReduced, 12, DURATION.fast);
+  const baselineVariants = fadeIn(isReduced, DURATION.base, 0.4);
+
   return (
-    <footer id="footer" className="footer">
+    <footer className="footer">
       <Container>
-        {/* ---- Main block: identity (left) + socials (right) ---- */}
         <div className="footer__inner">
-          <div className="footer__identity">
+          {/* ---- Identity ---- */}
+          <motion.div
+            className="footer__identity"
+            variants={identityVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={VIEWPORT.late}
+          >
             <span className="footer__name">{footer.name}</span>
             <span className="footer__role">{footer.role}</span>
 
@@ -25,9 +52,17 @@ export function Footer() {
                 </span>
               ))}
             </p>
-          </div>
+          </motion.div>
 
-          <nav className="footer__socials" aria-label="Contact and social links">
+          {/* ---- Socials ---- */}
+          <motion.nav
+            className="footer__socials"
+            aria-label="Contact and social links"
+            variants={socialsContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={VIEWPORT.late}
+          >
             <ul className="footer__socials-list">
               {footer.socials.map((link) => {
                 const externalProps = link.external
@@ -38,7 +73,7 @@ export function Footer() {
                   : {};
 
                 return (
-                  <li key={link.id}>
+                  <motion.li key={link.id} variants={socialItem}>
                     <a
                       className="footer__social-link"
                       href={link.href}
@@ -55,18 +90,24 @@ export function Footer() {
                         {link.label}
                       </span>
                     </a>
-                  </li>
+                  </motion.li>
                 );
               })}
             </ul>
-          </nav>
+          </motion.nav>
         </div>
 
-        {/* ---- Baseline: copyright (left) + location (right) ---- */}
-        <div className="footer__baseline">
+        {/* ---- Baseline ---- */}
+        <motion.div
+          className="footer__baseline"
+          variants={baselineVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={VIEWPORT.veryLate}
+        >
           <span className="footer__copyright">{footer.copyright}</span>
           <span className="footer__location">{footer.location}</span>
-        </div>
+        </motion.div>
       </Container>
     </footer>
   );

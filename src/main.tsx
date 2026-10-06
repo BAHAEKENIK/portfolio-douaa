@@ -16,6 +16,7 @@ import "./styles/skills.css";
 import "./styles/process.css";
 import "./styles/education.css";
 import "./styles/footer.css";
+import "./styles/lazy-section.css";
 
 import App from "./App";
 

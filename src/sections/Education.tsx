@@ -28,11 +28,7 @@ export function Education() {
   const contentVariants = fadeUp(isReduced, 12, DURATION.fast);
 
   return (
-    <section
-      id="education"
-      className="education"
-      aria-labelledby="education-title"
-    >
+    <section className="education" aria-labelledby="education-title">
       <Container>
         <SectionHeader title="Education" index="06" id="education-title" />
 

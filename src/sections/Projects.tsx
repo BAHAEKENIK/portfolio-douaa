@@ -96,7 +96,7 @@ function ProjectEntry({ project, reduce }: ProjectEntryProps) {
       variants={entryContainer}
       initial="hidden"
       whileInView="visible"
-      viewport={VIEWPORT.base}
+      viewport={VIEWPORT.early}
       {...spotlight.handlers}
     >
       <motion.div
@@ -178,10 +178,9 @@ export function Projects() {
 
   return (
     <section
-      id="projects"
-      className="section--dark projects"
-      aria-labelledby="projects-title"
-    >
+  className="section--dark projects"
+  aria-labelledby="projects-title"
+>
       <Container>
         <SectionHeader title="Projects" index="03" id="projects-title" />
 

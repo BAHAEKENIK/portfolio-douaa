@@ -7,10 +7,8 @@ export default defineConfig({
     {
       name: "force-exit-after-build",
       closeBundle() {
-        // Vercel waits for the Node process to end before finishing.
-        // This hook forces an exit after the bundle is generated,
-        // preventing a hang on the build server.
-        setTimeout(() => process.exit(0), 0);
+        console.log("[force-exit] Bundle closed, exiting...");
+        setTimeout(() => process.exit(0), 100);
       },
     },
   ],

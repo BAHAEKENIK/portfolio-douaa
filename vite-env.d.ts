@@ -1,11 +1,11 @@
 /// <reference types="vite/client" />
 
 declare module "*.css" {
-  const content: { [className: string]: string };
-  export default content;
+  const css: string;
+  export default css;
 }
 
 declare module "*.scss" {
-  const content: { [className: string]: string };
-  export default content;
+  const scss: string;
+  export default scss;
 }
